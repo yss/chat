@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>聊天室</title>
+    <link href="http://libs.baidu.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #bd {position:relative;padding-bottom:60px;}
+        #chat-list{width:100%;height:100%;}
+        #chat-list .media {margin-top:0;}
+        #message {position:fixed;bottom:0;width:100%;}
+    </style>
+</head>
+<body>
+<div id="bd" class="container">
+    <ul id="chat-list" class="nav nav-list"></ul>
+    <form id="message" name="messageForm" role="form" class="form-horizontal fix">
+        <div class="form-group">
+            <div class="controls">
+                <textarea name="word" row="2" class="input-xxlarge" autocomplete="off" placeholder="说点东西吧~"></textarea>
+                <button type="submit" class="btn btn-default btn-large">发送之</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="type/x-template" id="chat-list-tpl">
+<li class="media">
+    <span class="pull-left"><a href="javascript:;">{name}</a>：</span>
+    <div class="media-body">{msg}</div>
+</li>
+</script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="/static/js/socket.io.js"></script>
+<script src="/static/js/chat.js"></script>
+</body>
+</html>
